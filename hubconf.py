@@ -82,10 +82,14 @@ def train(cnn, loss_func, optimizer, train_data_loader, num_epochs):
     
     pass
 
-
 # sample invocation torch.hub.load(myrepo,'get_model',train_data_loader=train_data_loader,n_epochs=5, force_reload=True)
 def get_model(train_data_loader=None, n_epochs=10):
-    model = cs19b008_CNN()
+    sample_data = None
+    for test_images, test_labels in train_data_loader:  
+        sample_image = test_images[0]    # Reshape them according to your needs.
+        sample_data = sample_image
+    
+    model = cs19b012_CNN(sample_data)
     loss_func = nn.CrossEntropyLoss()   
     optimizer = optim.Adam(model.parameters(), lr = 0.01)   
     # return cnn, loss_func, optimizer
@@ -95,7 +99,6 @@ def get_model(train_data_loader=None, n_epochs=10):
   # Use softmax and cross entropy loss functions
   # set model variable to proper object, make use of train_data
   
-    print ('Returning model... (rollnumber: xx)')
+    print ('Returning model... (rollnumber: cs19b008)')
   
     return model
-
