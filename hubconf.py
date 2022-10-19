@@ -9,4 +9,10 @@ from torch import optim
 from torch.autograd import Variable
 
 # Device configuration
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')# Define a neural network YOUR ROLL NUMBER (all small letters) should prefix the classname
+
+class cs19bNN(nn.Module):
+  pass
+# Define a neural network YOUR ROLL NUMBER (all small letters) should prefix the classname
+class YourRollNumberNN(nn.Module):
+  pass
