@@ -89,7 +89,7 @@ def get_model(train_data_loader=None, n_epochs=10):
         sample_image = test_images[0]    # Reshape them according to your needs.
         sample_data = sample_image
     
-    model = cs19b012_CNN(sample_data)
+    model = cs19b008_CNN(sample_data)
     loss_func = nn.CrossEntropyLoss()   
     optimizer = optim.Adam(model.parameters(), lr = 0.01)   
     # return cnn, loss_func, optimizer
