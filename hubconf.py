@@ -82,3 +82,20 @@ def train(cnn, loss_func, optimizer, train_data_loader, num_epochs):
     
     pass
 
+
+# sample invocation torch.hub.load(myrepo,'get_model',train_data_loader=train_data_loader,n_epochs=5, force_reload=True)
+def get_model(train_data_loader=None, n_epochs=10):
+    model = cs19b008_CNN()
+    loss_func = nn.CrossEntropyLoss()   
+    optimizer = optim.Adam(model.parameters(), lr = 0.01)   
+    # return cnn, loss_func, optimizer
+    train(model, loss_func, optimizer, train_data_loader, n_epochs)
+
+
+  # Use softmax and cross entropy loss functions
+  # set model variable to proper object, make use of train_data
+  
+    print ('Returning model... (rollnumber: xx)')
+  
+    return model
+
