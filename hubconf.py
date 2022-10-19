@@ -12,8 +12,6 @@ from torch.autograd import Variable
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')# Define a neural network YOUR ROLL NUMBER (all small letters) should prefix the classname
 
 # Define a neural network YOUR ROLL NUMBER (all small letters) should prefix the classname
-class cs19b008(nn.Module):
-  pass
 def load_data():
 
     train_data = datasets.FashionMNIST(
