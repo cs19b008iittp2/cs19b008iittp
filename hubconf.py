@@ -16,6 +16,19 @@ def kali():
   
 # Define a neural network YOUR ROLL NUMBER (all small letters) should prefix the classname
 
+# def get_dataloaders(train_data, test_data):
+#     loaders = {
+#     'train' : torch.utils.data.DataLoader(train_data, 
+#                                           batch_size=100, 
+#                                           shuffle=True, 
+#                                           num_workers=1),
+    
+#     'test'  : torch.utils.data.DataLoader(test_data, 
+#                                           batch_size=100, 
+#                                           shuffle=True, 
+#                                           num_workers=1),
+#     }
+#     return loaders
 
 
 class cs19b008_CNN(nn.Module):
