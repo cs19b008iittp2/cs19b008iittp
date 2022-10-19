@@ -50,4 +50,35 @@ class cs19b008_CNN(nn.Module):
 def train(cnn, loss_func, optimizer, train_data_loader, num_epochs):
     # num_epochs = 10
     cnn.train()
+    
+        
+    # Train the model
+    total_step = len(train_data_loader)
+        
+    for epoch in range(num_epochs):
+        for i, (images, labels) in enumerate(train_data_loader):
+            
+            # gives batch data, normalize x when iterate train_loader
+            b_x = Variable(images)   # batch x
+            b_y = Variable(labels)   # batch y
+            output = cnn(b_x)[0]               
+            loss = loss_func(output, b_y)
+            
+            # clear gradients for this training step   
+            optimizer.zero_grad()           
+            
+            # backpropagation, compute gradients 
+            loss.backward()    
+            # apply gradients             
+            optimizer.step()                
+            
+            if (i+1) % 100 == 0:
+                print ('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}' 
+                       .format(epoch + 1, num_epochs, i + 1, total_step, loss.item()))
+            pass
+        
+        pass
+    
+    
+    pass
 
